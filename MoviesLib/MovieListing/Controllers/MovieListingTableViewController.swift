@@ -14,23 +14,29 @@ import UIKit
 
 class MovieListingTableViewController: UITableViewController {
 
+    var movies: [Movie] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadMovies()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let movieVisualizationViewController = segue.destination as? MovieVisualizationViewController,
+           let row = tableView.indexPathForSelectedRow?.row {
+            
+            let movie = movies[row]
+            movieVisualizationViewController.movie = movie
+        }
+    }
     
     private func loadMovies() {
-        
         guard let jsonURL = Bundle.main.url(forResource: "movies", withExtension: "json") else {return}
         do {
             let jsonData = try Data(contentsOf: jsonURL)
-            
             let jsonDecoder = JSONDecoder()
             //jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-            
-            let movies = try jsonDecoder.decode([Movie].self, from: jsonData)
+            movies = try jsonDecoder.decode([Movie].self, from: jsonData)
             for movie in movies {
                 print(movie.title)
             }
@@ -42,24 +48,24 @@ class MovieListingTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movies.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MovieTableViewCell else {
+            return UITableViewCell()
+        }
 
-        // Configure the cell...
+        let movie = movies[indexPath.row]
+        cell.configure(with: movie)
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

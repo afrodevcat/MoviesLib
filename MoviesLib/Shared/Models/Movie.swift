@@ -17,6 +17,15 @@ struct Movie: Decodable {
     let summary: String
     let image: String
     
+    //Propriedade computada
+    var ratingFormatted: String {
+        "⭐️ \(rating)/10"
+    }
+    
+    var smallImage: String {
+        "\(image)small"
+    }
+    
     /*
     enum CodingKeys: String, CodingKey {
         case title = "titulo"
