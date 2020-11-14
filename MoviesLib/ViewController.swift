@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func gotToURL(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "https://www.toystory3.com.br")!, options: [:], completionHandler: nil)
+    }
+    
 }
 
