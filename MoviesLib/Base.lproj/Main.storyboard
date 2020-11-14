@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pdf-fh-O4K">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -8,10 +8,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Filmes-->
+        <scene sceneID="Nuo-8u-lI8">
+            <objects>
+                <tableViewController id="ZPx-zl-K9Q" customClass="MovieListingTableViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hn7-Jh-EkP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="euq-Iy-XTq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="euq-Iy-XTq" id="xDD-4m-KaW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZPx-zl-K9Q" id="QtO-RB-Be0"/>
+                            <outlet property="delegate" destination="ZPx-zl-K9Q" id="hx5-Ak-oPp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Filmes" id="3EI-Mw-TsS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vif-cA-nTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="129"/>
+        </scene>
+        <!--Movie Visualization View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MovieVisualizationViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,14 +104,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjE-1I-zpJ">
-                                        <rect key="frame" x="26" y="316" width="203" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="https://www.toystory3.com.br"/>
-                                        <connections>
-                                            <action selector="gotToURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gO7-H0-mCW"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -94,16 +115,6 @@
                                     <constraint firstItem="gHO-Xc-hIL" firstAttribute="top" secondItem="CCg-TP-Fpj" secondAttribute="bottom" constant="6" id="f3Y-60-Ioo"/>
                                     <constraint firstAttribute="bottom" secondItem="gHO-Xc-hIL" secondAttribute="bottom" constant="45" id="qUb-7w-2Gh"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="kjE-1I-zpJ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="kjE-1I-zpJ"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toy Story 3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmi-L1-HKZ">
                                 <rect key="frame" x="16" y="324.66666666666669" width="343" height="33.666666666666686"/>
@@ -170,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387.93103448275866" y="119.2"/>
+            <point key="canvasLocation" x="1328.8" y="118.96551724137932"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4DU-Oc-Ez7">
@@ -309,22 +320,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83Q-UO-0Lo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="104"/>
+            <point key="canvasLocation" x="2796" y="103.44827586206897"/>
         </scene>
-        <!--View Controller-->
+        <!--Apagar View Controller-->
         <scene sceneID="Iuw-qC-5Jo">
             <objects>
-                <viewController id="Rg8-6z-do9" sceneMemberID="viewController">
+                <viewController id="Rg8-6z-do9" customClass="ApagarViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Nw-e0-WMe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZC-JV-XO2">
+                                <rect key="frame" x="0.0" y="77" width="375" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rg8-6z-do9" id="KFq-8O-Z2n"/>
+                                    <outlet property="delegate" destination="Rg8-6z-do9" id="JTD-zU-l6m"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4ih-u7-cT2"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLD-gN-nWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2807.1999999999998" y="103.44827586206897"/>
+            <point key="canvasLocation" x="3749.5999999999999" y="103.44827586206897"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b0P-ef-EyC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pdf-fh-O4K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="IJ7-8v-9AB">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZPx-zl-K9Q" kind="relationship" relationship="rootViewController" id="nFM-eO-kqz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jm7-Aw-Bfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-487.19999999999999" y="128.57142857142858"/>
         </scene>
     </scenes>
     <resources>
