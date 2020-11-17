@@ -14,7 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let alreadyOpen = UserDefaults.standard.bool(forKey: "alreadyOpen")
+        if alreadyOpen != true {
+            print("Seja bem-vindo!!!!")
+            UserDefaults.standard.set(true, forKey: "alreadyOpen")
+        }
+        
         return true
     }
 

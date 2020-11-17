@@ -18,6 +18,10 @@
 		22E119D3256029900085CC3F /* ApagarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E119D2256029900085CC3F /* ApagarViewController.swift */; };
 		22E119D525602C1B0085CC3F /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E119D425602C1B0085CC3F /* MyTableViewController.swift */; };
 		22E119D7256059370085CC3F /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E119D6256059370085CC3F /* MovieTableViewCell.swift */; };
+		22E119DB256339050085CC3F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E119DA256339050085CC3F /* MapViewController.swift */; };
+		22E119DF2563541C0085CC3F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E119DE2563541C0085CC3F /* SettingsViewController.swift */; };
+		22E119E2256354900085CC3F /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E119E1256354900085CC3F /* Key.swift */; };
+		22E119E425635BF30085CC3F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22E119E325635BF30085CC3F /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		22E119D2256029900085CC3F /* ApagarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApagarViewController.swift; sourceTree = "<group>"; };
 		22E119D425602C1B0085CC3F /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		22E119D6256059370085CC3F /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		22E119DA256339050085CC3F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		22E119DE2563541C0085CC3F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		22E119E1256354900085CC3F /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		22E119E325635BF30085CC3F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,8 @@
 				22A0C2E625600580004948FB /* Main */,
 				22A0C2E425600552004948FB /* MovieListing */,
 				22A0C2E52560056B004948FB /* MovieVisualization */,
+				22E119D8256338C00085CC3F /* Map */,
+				22E119DC256353F30085CC3F /* Settings */,
 				22A0C2ED256008AC004948FB /* Shared */,
 				22A0C2D0255CB0D2004948FB /* Main.storyboard */,
 				22E119D2256029900085CC3F /* ApagarViewController.swift */,
@@ -85,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				22A0C2DF256001B9004948FB /* JSON */,
+				22E119E325635BF30085CC3F /* Settings.bundle */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -186,6 +197,47 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		22E119D8256338C00085CC3F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				22E119D9256338D20085CC3F /* Controllers */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		22E119D9256338D20085CC3F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22E119DA256339050085CC3F /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		22E119DC256353F30085CC3F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				22E119E0256354750085CC3F /* Models */,
+				22E119DD256354010085CC3F /* Controllers */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		22E119DD256354010085CC3F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22E119DE2563541C0085CC3F /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		22E119E0256354750085CC3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22E119E1256354900085CC3F /* Key.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,6 +298,7 @@
 			files = (
 				22A0C2D7255CB0D3004948FB /* LaunchScreen.storyboard in Resources */,
 				22A0C2D4255CB0D3004948FB /* Assets.xcassets in Resources */,
+				22E119E425635BF30085CC3F /* Settings.bundle in Resources */,
 				22A0C2E225600387004948FB /* movies.json in Resources */,
 				22A0C2E3256003F5004948FB /* Main.storyboard in Resources */,
 			);
@@ -259,12 +312,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A0C2CF255CB0D2004948FB /* MovieVisualizationViewController.swift in Sources */,
+				22E119E2256354900085CC3F /* Key.swift in Sources */,
 				22E119D525602C1B0085CC3F /* MyTableViewController.swift in Sources */,
 				22E119D7256059370085CC3F /* MovieTableViewCell.swift in Sources */,
 				22E119D1256025240085CC3F /* MovieListingTableViewController.swift in Sources */,
 				22A0C2CB255CB0D2004948FB /* AppDelegate.swift in Sources */,
 				22A0C2F02560091C004948FB /* Movie.swift in Sources */,
 				22E119D3256029900085CC3F /* ApagarViewController.swift in Sources */,
+				22E119DB256339050085CC3F /* MapViewController.swift in Sources */,
+				22E119DF2563541C0085CC3F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
